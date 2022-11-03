@@ -11,7 +11,7 @@ class handler(BaseHTTPRequestHandler):
 
 
         if 'country' in dictionary :
-            country = dictionary ['country']
+            country = dictionary['country']
             url = 'https://restcountries.com/v3.1/name/'
             response  = requests.get(url + country)
             data = response.json()
@@ -19,12 +19,12 @@ class handler(BaseHTTPRequestHandler):
             resalts = f"The capital of {dictionary ['country']} is {capital}"
 
         elif 'capital' in dictionary :
-            capital = dictionary ['capital']
+            capital = dictionary['capital']
             url ='https://restcountries.com/v3.1/capital/'
             response  = requests.get(url+capital)
             data = response.json()
             country = data[0]['name']['common']
-            resalts = f"The {dictionary ['capital']} is capital of {country}"
+            resalts = f"The {dictionary['capital']} is capital of {country}"
             
 
         else:
